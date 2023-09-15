@@ -1,0 +1,53 @@
+{
+    "private": false,
+    "type": "module",
+    "license": "ISC",
+    "version": "1.0.0",
+    "name": "@termehui/http",
+    "description": "Axios based HTTP client with error handlers",
+    "main": "./dist/http.umd.js",
+    "module": "./dist/http.js",
+    "types": "./dist/http.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/http.js",
+            "require": "./dist/http.umd.cjs"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "http",
+        "client",
+        "axios"
+    ],
+    "authors": [
+        {
+            "email": "m.ajamekramy@gmail.com",
+            "homepage": "http://ekramy.ir",
+            "name": "Mojtaba Ekramy",
+            "role": "Developer"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/termehui/http"
+    },
+    "scripts": {
+        "build:types": "tsc --project tsconfig.types.json --declaration --emitDeclarationOnly --outDir dist",
+        "build": "vite build && npm run build:types",
+        "prepare": "npm run build",
+        "test": "vitest"
+    },
+    "dependencies": {
+        "axios": "^1.5.0"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/node": "^20.6.1",
+        "typescript": "^5.2.2",
+        "vite": "^4.4.9",
+        "vitest": "^0.34.4"
+    }
+}
