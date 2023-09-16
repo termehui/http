@@ -2,7 +2,7 @@
     "private": false,
     "type": "module",
     "license": "ISC",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "name": "@termehui/http",
     "description": "Axios based HTTP client with error handlers",
     "main": "./dist/http.umd.js",
@@ -16,7 +16,7 @@
             },
             "require": {
                 "types": "./dist/http.d.ts",
-                "default": "./dist/http.umd.cjs"
+                "default": "./dist/http.umd.js"
             }
         }
     },
