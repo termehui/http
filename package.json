@@ -2,7 +2,7 @@
     "private": false,
     "type": "module",
     "license": "ISC",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "@termehui/http",
     "description": "Axios based HTTP client with error handlers",
     "main": "./dist/http.umd.js",
@@ -10,8 +10,14 @@
     "types": "./dist/http.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/http.es.js",
-            "require": "./dist/http.umd.cjs"
+            "import": {
+                "types": "./dist/http.d.ts",
+                "default": "./dist/http.es.js"
+            },
+            "require": {
+                "types": "./dist/http.d.ts",
+                "default": "./dist/http.umd.cjs"
+            }
         }
     },
     "files": [
@@ -35,19 +41,19 @@
         "url": "https://github.com/termehui/http"
     },
     "scripts": {
-        "build:types": "tsc --project tsconfig.types.json --declaration --emitDeclarationOnly --outDir dist",
-        "build": "vite build && npm run build:types",
+        "build": "vite build",
         "prepare": "npm run build",
         "test": "vitest"
     },
     "dependencies": {
+        "@types/axios": "^0.14.0",
         "axios": "^1.5.0"
     },
     "devDependencies": {
-        "@types/axios": "^0.14.0",
         "@types/node": "^20.6.1",
         "typescript": "^5.2.2",
         "vite": "^4.4.9",
+        "vite-plugin-dts": "^3.5.3",
         "vitest": "^0.34.4"
     }
 }

@@ -1,5 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
 
 /// <reference types="vitest" />
 // Configure Vitest (https://vitest.dev/config/)
@@ -17,4 +18,5 @@ export default defineConfig({
             external: ["axios"],
         },
     },
+    plugins: [dts({ rollupTypes: true })],
 });
